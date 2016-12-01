@@ -1,0 +1,14 @@
+﻿Построение начато 10.11.2016 23:11:40.
+     1>Проект "G:\Лобач\АиСД\list-master\list-master\List\List\List.vcxproj" в узле 2 (целевые объекты build).
+     1>PrepareForBuild:
+         Создание каталога "G:\Лобач\АиСД\list-master\list-master\List\Debug\".
+       InitializeBuildStatus:
+         Создание "Debug\List.unsuccessfulbuild", так как было задано "AlwaysCreate".
+       FinalizeBuildStatus:
+         Файл "Debug\List.unsuccessfulbuild" удаляется.
+         Обращение к "Debug\List.lastbuildstate".
+     1>Построение проекта "G:\Лобач\АиСД\list-master\list-master\List\List\List.vcxproj" завершено (целевые объекты build).
+
+Построение успешно завершено.
+
+Затраченное время: 00:00:00.09
