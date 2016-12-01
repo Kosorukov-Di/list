@@ -11,6 +11,12 @@ template <class ValType>
 struct node{
 	node* next;
 	ValType data;
+	
+	node() {};
+	node(ValType d) {
+		next = 0;
+		data = d;
+	};
 };
 #endif
 
@@ -54,8 +60,9 @@ TList<ValType>::~TList()
 		{
 			temp = body;
 			body = body->next;
-			delete[] temp;
+			delete temp;
 		}
+		delete body;
 	}
 }
 
