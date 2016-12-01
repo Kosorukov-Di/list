@@ -21,18 +21,18 @@ TEST(TStack, new_stack_is_empty)
 	EXPECT_EQ(true, st.IsEmpty());
 }
 
-TEST(TStack, can_put_elem)
+TEST(TStack, can_push_elem)
 {
 	TStack<int> st;
 
-	ASSERT_NO_THROW(st.Put(3));
+	ASSERT_NO_THROW(st.Push(3));
 }
 
 TEST(TStack, not_empty)
 {
 	TStack<int> st;
 
-	st.Put(3);
+	st.Push(3);
 
 	EXPECT_EQ(false, st.IsEmpty());
 }
@@ -48,7 +48,7 @@ TEST(TStack, can_clear)
 {
 	TStack<int> st;
 
-	st.Put(3);
+	st.Push(3);
 
 	ASSERT_NO_THROW(st.Clr());
 }
@@ -57,45 +57,45 @@ TEST(TStack, clear_stack_is_empty)
 {
 	TStack<int> st;
 
-	st.Put(3);
+	st.Push(3);
 	st.Clr();
 
 	EXPECT_EQ(true, st.IsEmpty());
 }
 
-TEST(TStack, can_look_elem)
+TEST(TStack, can_top_elem)
 {
 	TStack<int> st;
 
-	st.Put(3);
+	st.Push(3);
 
-	EXPECT_EQ(3,st.Look());
+	EXPECT_EQ(3,st.Top());
 }
 
-TEST(TStack, can_get_elem)
+TEST(TStack, can_pop_elem)
 {
 	TStack<int> st;
 
-	st.Put(3);
+	st.Push(3);
 
-	EXPECT_EQ(3,st.Get());
+	EXPECT_EQ(3,st.Pop());
 }
 
-TEST(TStack, elem_delete_after_get)
+TEST(TStack, elem_delete_after_pop)
 {
 	TStack<int> st;
 
-	st.Put(3);
-	st.Get();
+	st.Push(3);
+	st.Pop();
 
 	EXPECT_EQ(true, st.IsEmpty());
 }
 
-TEST(TStack, Put_and_Get)
+TEST(TStack, push_and_pop)
 {
 	TStack<int> st;
 
-	for(int i=0;i<10;i++) st.Put(i);
+	for(int i=0;i<10;i++) st.Push(i);
 	for(int i=9;i>=0;i--) 
-		EXPECT_EQ(i, st.Get());	
+		EXPECT_EQ(i, st.Pop());	
 }

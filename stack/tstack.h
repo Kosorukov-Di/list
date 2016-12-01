@@ -13,10 +13,10 @@ public:
 	TStack();						// конструктор
 	TStack(const TStack &st);		// конструктор копирования
 
-	void Put(const ValType elem);	// добавить элемент в стек
+	void Push(const ValType elem);	// добавить элемент в стек
 	void Clr();						// очистить стек
-	ValType Get();					// извлечь элемент из стека
-	ValType Look();					// поросмотреть вершину стека
+	ValType Pop();					// извлечь элемент из стека
+	ValType Top();					// поросмотреть вершину стека
 
 };
 
@@ -30,6 +30,7 @@ TStack<ValType>::TStack(const TStack<ValType> &st)
 {
 	if(st.body)
 	{
+		/* 
 		node<ValType>* temp = st.body;
 		body = new node<ValType>;
 		while(temp->next)
@@ -42,17 +43,24 @@ TStack<ValType>::TStack(const TStack<ValType> &st)
 		}
 		body->data = temp->data;
 		body->next = 0;
+		*/
+		
+		node<ValType>* temp = st.body;
+		body = temp;
+		while(temp->next)
+		{
+			TList<ValType>::InsertAtBegin(temp->next);
+			temp = temp->next;
+		}
 	}
 	else body = 0;
 }
 
 template <class ValType>
-void TStack<ValType>::Put(const ValType elem)
+void TStack<ValType>::Push(const ValType elem)
 {
-	node<ValType>* temp = body;
-	body = new node<ValType>;
-	body->data = elem;
-	body->next = temp;
+
+	TList<ValType>::InsertAtBegin(new node<ValType>(elem));
 }
 
 template <class ValType>
@@ -67,33 +75,29 @@ void TStack<ValType>::Clr()
 			body = body->next;
 			delete temp;
 		}
+		delete body;
 	}
 	body = 0;
 }
 
 template <class ValType>
-ValType TStack<ValType>::Get()
+ValType TStack<ValType>::Pop()
 {
 	if(body)
 	{
-		node<ValType>* temp = body;
-		body = body->next;
-		ValType res = temp->data;
-		delete temp;
+		ValType res = body->data;
+		TList<ValType>::DeleteAtBegin();
 		return res;
 	}
 	else throw "Stack is empty";
 }
 
 template <class ValType>
-ValType TStack<ValType>::Look()
+ValType TStack<ValType>::Top()
 {
 	if(body)
 	{
-		node<ValType>* temp = body;
-		body = body->next;
-		ValType res = temp->data;
-		delete temp;
+		ValType res = body->data;
 		return res;
 	}
 	else throw "Stack is empty";
