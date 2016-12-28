@@ -1,0 +1,18 @@
+﻿Построение начато 28.12.2016 7:24:41.
+     1>Проект "G:\Лобач\АиСД\list-master\list-master\gtest\gtest.vcxproj" в узле 2 (целевые объекты build).
+     1>InitializeBuildStatus:
+         Создание "Debug\gtest.unsuccessfulbuild", так как было задано "AlwaysCreate".
+       ClCompile:
+         E:\Programs\VisualStudio2010\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt "gtest-all.cc"
+         gtest-all.cc
+       Lib:
+         E:\Programs\VisualStudio2010\VC\bin\Lib.exe /OUT:"G:\Лобач\АиСД\list-master\list-master\List\Debug\gtest.lib" /NOLOGO "Debug\gtest-all.obj"
+         gtest.vcxproj -> G:\Лобач\АиСД\list-master\list-master\List\Debug\gtest.lib
+       FinalizeBuildStatus:
+         Файл "Debug\gtest.unsuccessfulbuild" удаляется.
+         Обращение к "Debug\gtest.lastbuildstate".
+     1>Построение проекта "G:\Лобач\АиСД\list-master\list-master\gtest\gtest.vcxproj" завершено (целевые объекты build).
+
+Построение успешно завершено.
+
+Затраченное время: 00:00:02.07
